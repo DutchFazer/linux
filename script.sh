@@ -19,8 +19,7 @@ git clone https://gitlab.com/kalilinux/packages/dirbuster.git \
   && ./.bash_aliases
 
 wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
-  && sudo unzip SecList.zip \
-  && sudo mv Seclists-master /usr/share/seclist
+  && sudo unzip SecList.zip
 
 chmod 755 Downloads/burpsuite_community_linux_v2022_1_1.sh \
   && ./Downloads/burpsuite_community_linux_v2022_1_1.sh
@@ -34,7 +33,9 @@ wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas_li
   && chmod 755 linpeas \
   && sudo mv linpeas /opt/linpeas
 
-sudo rm -r SecLists-master/ SecList.zip script Downloads/burpsuite_community_linux_v2022_1_1.sh
+sudo mv SecLists-master/ /usr/share/seclist
+
+sudo rm -r SecList.zip script Downloads/burpsuite_community_linux_v2022_1_1.sh
 
 C=$(printf '\033')
 RED="${C}[1;31m"
