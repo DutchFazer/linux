@@ -35,7 +35,7 @@ wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas_li
 
 sudo mv SecLists-master/ /usr/share/seclist
 
-sudo rm -r SecList.zip script Downloads/burpsuite_community_linux_v2022_1_1.sh
+sudo rm -r SecList.zip linux Downloads/burpsuite_community_linux_v2022_1_1.sh
 
 C=$(printf '\033')
 RED="${C}[1;31m"
