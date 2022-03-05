@@ -3,17 +3,14 @@
 # Plaats hem in de user folder en geef hem uitvoerrechten.
 # Download eerst Burp van de website!!!
 
-C=$(printf '\033')
-RED="${C}[1;31m"
+echo "==============================================================
+*                      BELANGRIJK                            *
+* Burp Suite:                                                *
+* Eerst downloaden voordat je het script start!              *
+*                                                            *
+=============================================================="
 
-echo "${RED}==============================================================
-${RED}*                      BELANGRIJK                            *
-${RED}* Burp Suite:                                                *
-${RED}* Eerst downloaden voordat je het script start!              *
-${RED}*                                                            *
-${RED}=============================================================="
-
-sudo apt install nmap git john sqlmap curl default-jre wireshark &&
+sudo apt install nmap john sqlmap curl default-jre wireshark &&
 
 git clone https://gitlab.com/kalilinux/packages/dirbuster.git \
   && sudo mv dirbuster /opt/dirbuster \
@@ -37,19 +34,25 @@ wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas_li
   && chmod 755 linpeas \
   && sudo mv linpeas /opt/linpeas
 
-sudo rm -r SecLists-master/ SecList.zip 
+sudo rm -r SecLists-master/ SecList.zip script Downloads/burpsuite_community_linux_v2022_1_1.sh
+
+C=$(printf '\033')
+RED="${C}[1;31m"
 
 echo "${RED}==============================================================
-${RED}* TO DO LIST                                                 *
-${RED}* Dirbuster:                                                 *
-${RED}* Verander het bestand /opt/dirbuster/DirBuster-1.0-RC1.sh   *
-${RED}* Verander de locatie door /opt/dirbuster/ ervoor te zetten. *
-${RED}*                                                            *
-${RED}* Metasploit:                                                *
-${RED}* Start msfconsole om hem verder te installeren              *
-${RED}* Na installatie rm msfinstall                               *
-${RED}*                                                            *
-${RED}* FoxyProxy:                                                 *
-${RED}* Downloaden via Firefox en installeren.                     *
-${RED}*                                                            *
-${RED}=============================================================="
+* TO DO LIST                                                 *
+* Dirbuster:                                                 *
+* Verander het bestand /opt/dirbuster/DirBuster-1.0-RC1.sh   *
+* Verander de locatie door /opt/dirbuster/ ervoor te zetten. *
+*                                                            *
+* Metasploit:                                                *
+* Start msfconsole om hem verder te installeren              *
+* Na installatie rm msfinstall                               *
+*                                                            *
+* FoxyProxy:                                                 *
+* Downloaden via Firefox en installeren.                     *
+*                                                            *
+* Burp Suite:                                                *
+* Certificaat aanmaken via Proxy options en deze importeren  *
+* in Firefox via settings => certificaten                    *
+=============================================================="
