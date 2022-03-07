@@ -10,7 +10,7 @@ echo "==============================================================
 *                                                            *
 =============================================================="
 
-sudo apt install nmap john sqlmap curl default-jre wireshark &&
+sudo apt install nmap john sqlmap curl default-jre wireshark net-tools &&
 
 git clone https://gitlab.com/kalilinux/packages/dirbuster.git \
   && sudo mv dirbuster /opt/dirbuster \
