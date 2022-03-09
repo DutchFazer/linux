@@ -24,14 +24,15 @@ wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList
 chmod 755 Downloads/burpsuite_community_linux_v2022_1_1.sh \
   && ./Downloads/burpsuite_community_linux_v2022_1_1.sh
 
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-   chmod 755 msfinstall && \
-  ./msfinstall
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall \
+  && chmod 755 msfinstall
 
 wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas_linux_amd64 \
   && mv linpeas_linux_amd64 linpeas \
   && chmod 755 linpeas \
   && sudo mv linpeas /opt/linpeas
+
+./msfinstall
 
 sudo mv SecLists-master/ /usr/share/seclist
 
